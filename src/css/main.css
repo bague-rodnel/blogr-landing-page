@@ -1,0 +1,468 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+
+/* =================== VARS ================ */
+:root {
+  --bs-gutter-x: 30px;
+
+  --font-family-overpass: "Overpass", sans-serif;
+  --font-family-ubuntu: "Ubuntu", sans-serif;
+  --fw-overpass-light: 300;
+  --fw-overpass-semib: 600;
+  --fw-ubuntu-regular: 400;
+  --fw-ubuntu-medium: 500;
+  --fw-ubuntu-bold: 700;
+
+  --color-primary-red-light: hsl(356, 100%, 66%);
+  --color-primary-red-very-light: hsl(355, 100%, 74%);
+  --color-primary-blue-very-dark: hsl(208, 49%, 24%);
+
+  /* nav dropdown menu */
+  --color-neutral-blue-grayish-light: hsl(212, 48%, 95%);
+  /*  footer text */
+  --color-neutral-blue-grayish: hsl(240, 2%, 79%);
+  /* body copy */
+  --color-neutral-blue-very-dark-grayish: hsl(207, 13%, 34%);
+  /* footer background */
+  --color-neutral-blue-very-dark-blue: hsl(240, 10%, 16%);
+
+  /* gradient intro/cta mobile nav */
+  --color-bg-red-very-light: hsl(13, 100%, 72%);
+  --color-bg-red-light: hsl(353, 100%, 62%);
+
+  /* gradient body */
+  --color-bg-blue-very-dark-gray: hsl(237, 17%, 21%);
+  --color-bg-blue-very-dark-desaturated: hsl(237, 23%, 32%);
+
+  --section-border-radius: 75px;
+  --section-padding: 75px;
+}
+
+/* ================= RESETS ================ */
+body {
+  background-color: white;
+  color: var(--color-neutral-blue-very-dark-grayish);
+  font-size: 16px;
+  font-family: var(--font-family-overpass);
+  font-weight: var(--fw-overpass-light);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-overpass);
+  font-weight: var(--fw-ubuntu-bold) !important;
+  color: var(--color-primary-blue-very-dark);
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+section,
+footer {
+  position: relative;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+section::before,
+section::after {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 60vw;
+  position: absolute;
+  top: 0;
+}
+
+/* =========== BOOTSTRAP OVERRIDES =========== */
+.btn {
+  border: none;
+  border-radius: 500px;
+  padding: 0.7em 1.2em;
+  font-family: var(--font-family-ubuntu);
+  font-weight: var(--fw-ubuntu-bold);
+  color: var(--initial-color);
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.btn:hover {
+  color: var(--initial-color);
+  opacity: 0.9;
+}
+.nav-link {
+  color: inherit;
+  font-family: var(--font-family-overpass);
+  font-weight: var(--fw-overpass-semib);
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: var(--color-primary-red-light);
+}
+
+.navbar-toggler {
+  padding: 0;
+}
+
+.navbar-toggler img {
+  transition: all 0.3s linear;
+}
+
+.navbar-toggler[aria-expanded="true"] img {
+  content: url(../images/icon-close.svg);
+  transform: rotate(90deg);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-collapse {
+  border-radius: 5px;
+  background-color: white;
+}
+
+/*for animation*/
+.dropdown-toggle:after {
+  transition: 0.7s;
+  content: url(../images/icon-arrow-dark.svg);
+  border: none;
+  vertical-align: middle;
+}
+
+.dropdown-toggle[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-item:hover {
+  color: var(--color-primary-blue-very-dark);
+  font-weight: var(--fw-overpass-semib);
+  background: none;
+}
+
+.dropdown-item:focus {
+  background: none;
+}
+
+[class^="container"],
+[class^="container-lg"] {
+  height: 100%;
+}
+
+.row {
+  height: 100%;
+}
+/* ============= REUSABLE ================ */
+.btn-white {
+  background-color: white;
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.center-content {
+  display: grid;
+  place-content: center;
+}
+
+/* ============= NAV ============ */
+header {
+  z-index: 1;
+}
+.btn-signup {
+  --initial-color: white;
+  background-image: linear-gradient(
+    90deg,
+    var(--color-bg-red-very-light),
+    var(--color-bg-red-light)
+  );
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.nav-item .dropdown-menu {
+  background-color: var(--color-neutral-blue-grayish-light);
+}
+
+/* ============= HOME ============ */
+.home {
+  padding-top: 125px;
+  border-bottom-left-radius: var(--section-border-radius);
+  background-image: url(../images/bg-pattern-intro-mobile-new.svg),
+    linear-gradient(
+      135deg,
+      var(--color-bg-red-very-light),
+      var(--color-bg-red-light)
+    );
+  background-size: 1296px, contain;
+  /* background-size: 345%, contain; */
+  /* background-position: top -216px left -324px, 0 0; */
+  background-position: 35% 35%, 0 0;
+  background-repeat: no-repeat, no-repeat;
+  min-height: 600px;
+}
+
+.home__heading {
+  font-size: calc(1.6rem + 2.7vw);
+  line-height: 1.2;
+  color: white;
+}
+
+.home__cta-primary {
+  --initial-color: var(--color-bg-red-light);
+}
+
+.home__cta-primary:hover {
+  background-color: var(--color-primary-red-very-light);
+  color: white;
+}
+
+.home__cta-secondary {
+  --initial-color: white;
+}
+
+.home__cta-secondary:hover {
+  color: var(--color-primary-red-light);
+  background-color: white;
+}
+
+/* ============= INFRASTRUCTURE ============ */
+.feature-infrastructure {
+  --img-max-width: 552px;
+  --img-max-offset: 276px;
+  min-height: 624px;
+  margin-top: min(50vw, var(--img-max-offset));
+  padding-top: min(50vw, var(--img-max-offset));
+  padding-bottom: min(50vw, var(--img-max-offset));
+  border-top-right-radius: var(--section-border-radius);
+  border-bottom-left-radius: var(--section-border-radius);
+  background-color: white;
+  background-image: url(../images/bg-pattern-circles.svg),
+    linear-gradient(
+      -135deg,
+      var(--color-bg-blue-very-dark-desaturated),
+      var(--color-bg-blue-very-dark-gray)
+    );
+  background-size: 140%, cover;
+  background-position: 50% -50vw, center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.feature-infrastructure .heading-light {
+  color: white;
+  margin-bottom: 0.5em;
+}
+
+.feature-infrastructure .offset-top {
+  margin-top: calc(-1 * min(50vw, var(--img-max-offset)));
+}
+
+.feature-infrastructure__img {
+  position: absolute;
+  top: calc(-1 * min(50vw, var(--img-max-offset)));
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: var(--img-max-width);
+}
+
+/* ============ FEATURE/EXTRAS =============== */
+.feature-extras {
+  height: 1100px;
+}
+
+/* ============== FOOTER =================== */
+.footer {
+  border-top-right-radius: var(--section-border-radius);
+  background-color: var(--color-neutral-blue-very-dark-blue);
+}
+
+.footer__logo {
+  width: 100px;
+  height: 40px;
+  margin: 0 auto 75px;
+}
+.footer__heading {
+  margin-bottom: 1rem;
+  font-family: var(--font-family-ubuntu);
+  font-weight: var(--fw-overpass-semib);
+  color: white;
+}
+
+.footer__links li {
+  padding: 0.2em;
+}
+.footer__links a {
+  color: var(--color-neutral-blue-grayish);
+}
+
+.footer__links a:hover {
+  text-decoration: underline;
+}
+/* ============= ATTRIBUTION ============ */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 992px) {
+  :root {
+    --section-padding: 100px;
+  }
+  .navbar-collapse {
+    background-color: transparent;
+    color: white;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navbar-nav__sub {
+    display: flex;
+  }
+
+  .nav-link {
+    opacity: 0.8;
+  }
+
+  .nav-link:focus,
+  .nav-link:hover {
+    text-decoration: underline;
+    color: white;
+    opacity: 1;
+  }
+
+  .navbar-nav__sub.login .nav-link {
+    padding: 0.7em 1.2em;
+  }
+
+  .nav-item {
+    margin-left: 1rem;
+  }
+
+  .nav-item .dropdown-menu {
+    background-color: white;
+  }
+
+  .dropdown-toggle:after {
+    content: url(../images/icon-arrow-light.svg);
+  }
+
+  .dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+
+  .btn-signup {
+    background-color: white;
+    background-image: none;
+    color: var(--color-primary-red-light);
+  }
+
+  .btn-signup:hover {
+    background-color: var(--color-primary-red-very-light);
+    color: white;
+  }
+
+  /* ========== ==== HOME 992 =============== */
+  .home {
+    background-image: url(../images/bg-pattern-intro-desktop.svg),
+      linear-gradient(
+        135deg,
+        var(--color-bg-red-very-light),
+        var(--color-bg-red-light)
+      );
+    background-size: 3175px, contain;
+    background-position: 25% 50%, 0 0;
+  }
+
+  /* ============= FEATURE/FUTURE 992 ============== */
+  .feature-future {
+    margin: calc(0.5 * var(--section-padding)) 0;
+    min-height: 50vw;
+    overflow-x: hidden;
+  }
+  .feature-future::after {
+    content: "";
+    background-image: url(../images/illustration-editor-desktop.svg);
+    left: 60vw;
+    background-position: 50%;
+  }
+
+  /* ============= FEATURE/INFRASTRUCTURE 992 ============== */
+  .feature-infrastructure {
+    margin-top: 0;
+    min-height: 400px;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-size: 70%, cover;
+    background-position: -40% 90%, center;
+  }
+
+  .feature-infrastructure__img {
+    top: -25%;
+    left: 25%;
+  }
+
+  /* ============= FEATURE/EXTRAS 992 ============== */
+  .feature-extras {
+    height: min(1025px, 100vw);
+    overflow-x: hidden;
+  }
+
+  .feature-extras::before {
+    content: "";
+    background-image: url(../images/illustration-laptop-desktop.svg);
+    right: 55vw;
+    background-position: 50%;
+  }
+
+  /* ================ FOOTER 992 ================= */
+  .footer .container {
+    position: relative;
+  }
+
+  .footer__logo {
+    position: absolute;
+    left: 0;
+  }
+
+  .footer__heading {
+    margin-bottom: 1.8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  [class^="container"],
+  [class^="container-lg"] {
+    max-width: 1172px;
+  }
+}
