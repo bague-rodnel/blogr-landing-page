@@ -44,4 +44,4 @@ _desktop view ( 1440px )_ \
 
 ### What I learned
 
-Bootstrap defaults can be overriden through cascaded css declarations. It's only when there is a need to streamline/map Bootstrap keywords (i.e. -primary -secondary ...) to custom colors that a compiling a custom version of Bootstrap sass should be considered.
+Bootstrap defaults can be overriden through cascaded css declarations. It's only when there is a need to streamline/map Bootstrap keywords (i.e. -primary -secondary ...) to custom colors that a compiling a custom version of Bootstrap sass should be considered .
