@@ -311,7 +311,7 @@ header {
 }
 
 .footer__links li {
-  padding: 0.2em;
+  padding: 0.2em 0;
 }
 .footer__links a {
   color: var(--color-neutral-blue-grayish);
@@ -451,8 +451,9 @@ header {
   }
 
   .footer__logo {
-    position: absolute;
-    left: 0;
+    position: relative;
+    margin: 0;
+    left: var(--bs-gutter-x);
   }
 
   .footer__heading {
